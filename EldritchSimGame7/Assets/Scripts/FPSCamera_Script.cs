@@ -90,7 +90,7 @@ public class FPSCamera_Script : MonoBehaviour
 
         yRotation += mouseX;
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        xRotation = Mathf.Clamp(xRotation, -85f, 90f);
 
         //rotate cam and rotation
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
