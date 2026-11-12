@@ -24,7 +24,7 @@ public class PlayerMove_Script : MonoBehaviour
         Instance = this;
 
         myRB = GetComponent<Rigidbody>();
-        playerSpeed = basePlayerSpeed;
+        //playerSpeed = basePlayerSpeed;
     }
 
     void Update()
