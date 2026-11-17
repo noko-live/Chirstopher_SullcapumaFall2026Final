@@ -2743,7 +2743,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &1418770180
 MonoBehaviour:
@@ -2772,6 +2772,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 179eb6049378b6b4989d4997918fdffd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  playerCam: {fileID: 330585545}
+  interactable:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1001 &1536057276
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3726,9 +3730,10 @@ GameObject:
   - component: {fileID: 6665882990127960664}
   - component: {fileID: 1438637542198837448}
   - component: {fileID: 5152565646184266682}
-  m_Layer: 0
+  - component: {fileID: 6665882990127960665}
+  m_Layer: 6
   m_Name: Fishing Pole
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3963,6 +3968,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1644976016}
   m_LocalEulerAnglesHint: {x: -134.16, y: 120.27, z: 0}
+--- !u!64 &6665882990127960665
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4026460188611870218}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5061723205940892009, guid: aa28be6c41e00cf4a86e931756168124, type: 3}
 --- !u!4 &6689145043360083415
 Transform:
   m_ObjectHideFlags: 0
