@@ -12,6 +12,7 @@ public class PlayerHandling_Script : MonoBehaviour
     KeyCode interactKey = KeyCode.E;
     public LayerMask interactable;
     public Ray ray;
+    public GameObject pointer;
 
     private void Awake()
     {
@@ -31,29 +32,39 @@ public class PlayerHandling_Script : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!carryingObject && Input.GetKey(interactKey))
+      
+        RaycastHit hit;
+        ray = new Ray(Camera.main.gameObject.transform.position, Camera.main.gameObject.transform.forward);
+        if (Physics.Raycast(ray.origin, ray.direction, out hit, 1000, interactable))
         {
-            RaycastHit hit;
-            ray = playerCam.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray.origin, ray.direction, out hit, 1000, interactable))
+            Collider objectHit = hit.collider;
+            Debug.Log(objectHit);
+
+
+            pointer.SetActive(true);
+
+            if (!carryingObject && Input.GetKey(interactKey))
             {
-                Debug.Log("test");
-                Collider objectHit = hit.collider;
-                Debug.Log(objectHit);
-
-
                 if (objectHit != null && objectHit.transform.gameObject.CompareTag("Boat"))
                 {
-                    GameObject hitObject = objectHit.transform.root.gameObject;
-
-                    if  (objectHit.transform.gameObject.CompareTag("Interactable"))
+                    if (objectHit.transform.gameObject.CompareTag("Interactable"))
                     {
                         Debug.Log("found objecct");
                         objectHit.gameObject.SetActive(false);
+
+                        objectHit.gameObject.SendMessage("PlayerInteract");
+                    }
+                    else if (objectHit.transform.gameObject.CompareTag("FishingRod"))
+                    {
+                        Debug.Log("Rod Interacted");
                     }
                 }
-            }
 
+            }
+        }
+        else
+        {
+            pointer.SetActive(false);
         }
 
         DrawLinePOV();

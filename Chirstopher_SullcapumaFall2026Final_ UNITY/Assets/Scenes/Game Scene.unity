@@ -950,7 +950,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &424792411
 RectTransform:
   m_ObjectHideFlags: 0
@@ -983,7 +983,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.24705882}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2776,6 +2776,7 @@ MonoBehaviour:
   interactable:
     serializedVersion: 2
     m_Bits: 64
+  pointer: {fileID: 424792410}
 --- !u!1001 &1536057276
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3731,6 +3732,7 @@ GameObject:
   - component: {fileID: 1438637542198837448}
   - component: {fileID: 5152565646184266682}
   - component: {fileID: 6665882990127960665}
+  - component: {fileID: 6665882990127960666}
   m_Layer: 6
   m_Name: Fishing Pole
   m_TagString: Interactable
@@ -3983,13 +3985,25 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5061723205940892009, guid: aa28be6c41e00cf4a86e931756168124, type: 3}
+--- !u!114 &6665882990127960666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4026460188611870218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11ba20af0df03ad489a5d8e596bcdf3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!4 &6689145043360083415
 Transform:
   m_ObjectHideFlags: 0
